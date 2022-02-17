@@ -15,7 +15,22 @@
             <div class="col-md3">
 
                 <h1>{{ nameApp }}</h1>
-                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Realizado</th>
+                            <th>Tareas</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="task in tasks">
+                            <td> <input type="checkbox" v-model="task.done"> </td>
+                            <td> {{ task.name }}</td>
+                            <td>  </td>
+                        </tr>
+                    </tbody>
+                </table>
             
             </div><!--.col-->
         </div><!--.row-->
@@ -30,7 +45,29 @@
             el: '#taskApp',
             data: {
                 nameApp: 'Task Vuejs',
-                author: 'kevin'
+                author: 'kevin',
+                tasks:[
+                    { 
+                        name: 'Estiramientos',
+                        done: true 
+                    },
+                    { 
+                        name: 'Hacer la cama',
+                        done: false 
+                    },
+                    { 
+                        name: 'Hacer desayuno',
+                        done: false 
+                    },
+                    { 
+                        name: 'Practicar ingles',
+                        done: false 
+                    },
+                    { 
+                        name: 'Practicar programacion',
+                        done: false 
+                    }
+                ]
             }
         })
     </script>
