@@ -27,7 +27,9 @@
                         <tr v-for="task in tasks">
                             <td> <input type="checkbox" v-model="task.done"> </td>
                             <td> {{ task.name }}</td>
-                            <td>  </td>
+                            <td> 
+                                <button v-on:click="deleteTask(task)" class="btn btn-danger">Eliminar</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -68,6 +70,12 @@
                         done: false 
                     }
                 ]
+            },
+            methods: {
+                deleteTask: function(task) {
+                    console.log('Tarea '+this.tasks.indexOf(task)+' Eliminada: '+task.name)
+                    this.tasks.splice(this.tasks.indexOf(task),1)
+                }
             }
         })
     </script>
