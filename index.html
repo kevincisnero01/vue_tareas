@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task App</title>
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
+
+</head>
+<body>
+    <!--Vuejs Component-->
+    <div id="taskApp" class="container">
+        <div class="row">
+            <div class="col-md3">
+
+                <h1>{{ nameApp }}</h1>
+                
+            
+            </div><!--.col-->
+        </div><!--.row-->
+    </div>
+
+    <!-- Bootstrap js-->
+    <script src="resources/bootstrap/js/bootstrap.js"></script>
+    <!-- Vuejs-->
+    <script type="text/javascript" src="resources/vue/vue.js" ></script>
+    <script defer>
+        new Vue({
+            el: '#taskApp',
+            data: {
+                nameApp: 'Task Vuejs',
+                author: 'kevin'
+            }
+        })
+    </script>
+</body>
+</html>
